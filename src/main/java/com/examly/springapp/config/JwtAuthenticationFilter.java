@@ -1,4 +1,3 @@
-
 package com.examly.springapp.config;
 
 import io.jsonwebtoken.ExpiredJwtException;
@@ -30,6 +29,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtHelper jwtHelper;
     private final UserDetailsService userDetailsService;
 
+    // ← ADD THIS METHOD to skip filter for public endpoints
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+        String path = request.getRequestURI();
+        return path.equals("/api/register") || path.equals("/api/login");
+    }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
@@ -58,16 +64,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            // UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
-            // boolean isValid = this.jwtHelper.validateToken(token, userDetails);
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
-    System.out.println("=== JWT DEBUG ===");
-    System.out.println("Username from token: " + username);
-    System.out.println("Authorities: " + userDetails.getAuthorities());
-    boolean isValid = this.jwtHelper.validateToken(token, userDetails);
-    System.out.println("Token valid: " + isValid);
-    System.out.println("=================");
-
+            System.out.println("=== JWT DEBUG ===");
+            System.out.println("Username from token: " + username);
+            System.out.println("Authorities: " + userDetails.getAuthorities());
+            boolean isValid = this.jwtHelper.validateToken(token, userDetails);
+            System.out.println("Token valid: " + isValid);
+            System.out.println("=================");
 
             if (isValid) {
                 UsernamePasswordAuthenticationToken authentication =
@@ -82,5 +85,3 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
-
-

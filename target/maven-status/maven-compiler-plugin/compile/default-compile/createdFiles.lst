@@ -27,7 +27,6 @@ com\examly\springapp\exceptions\DuplicateProductException.class
 com\examly\springapp\config\UserPrinciple.class
 com\examly\springapp\model\LoginDTO.class
 com\examly\springapp\model\Product.class
-com\examly\springapp\config\CrosConfig.class
 com\examly\springapp\exceptions\GlobalExceptionHandler.class
 com\examly\springapp\service\ReviewService.class
 com\examly\springapp\controller\OrderController.class

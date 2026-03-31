@@ -14,6 +14,7 @@ C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\c
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\service\OrderService.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\controller\AuthController.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\model\User.java
+C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\config\CorsConfig.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\config\JwtAuthenticationEntryPoint.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\config\SecurityConfig.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\repository\OrderItemRepo.java
@@ -26,7 +27,6 @@ C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\c
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\exceptions\ErrorInfo.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\repository\OrderRepo.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\model\Order.java
-C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\config\CrosConfig.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\model\LoginDTO.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\exceptions\GlobalExceptionHandler.java
 C:\Users\debda\Downloads\TrendWave-main\TrendWave-main\springapp\src\main\java\com\examly\springapp\service\ReviewServiceImpl.java
