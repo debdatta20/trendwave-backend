@@ -1,4 +1,3 @@
-
 package com.examly.springapp.config;
 
 import java.util.Date;
@@ -11,7 +10,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JwtUtils {
-    private final String jwtSecret = "proKartsecretkey2025";
+    private final String jwtSecret = "proKartsecretkey2025proKartsecretkey2025proKartsecretkey2025proKart";
     private final int jwtExpirationMs = 86400000;
 
     public String generateToken(UserDetails userDetails) {
