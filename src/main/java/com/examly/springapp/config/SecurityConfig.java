@@ -20,9 +20,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
-
 import java.util.Arrays;
 
 @Configuration
@@ -70,7 +68,6 @@ public class SecurityConfig {
 
                 .authenticationProvider(authenticationProvider())
 
-                // 🔥 JWT FILTER
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
@@ -94,15 +91,12 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
-    // ✅ FIXED CORS
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOriginPatterns(Arrays.asList(
-                "http://localhost:4200",
-                "https://trendwave-frontend-8c4h.onrender.com"
-        ));
+        // ✅ Allow all origins
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
 
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
