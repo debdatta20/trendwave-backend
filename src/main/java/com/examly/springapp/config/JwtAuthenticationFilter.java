@@ -30,7 +30,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
-        String path = request.getServletPath();
+        String path = request.getRequestURI();
+        System.out.println(">>> REQUEST PATH: " + path); // see what path is actually coming in
+        System.out.println(">>> SERVLET PATH: " + request.getServletPath());
 
         // 🔥 CRITICAL FIX (skip auth for public APIs)
         if (path.contains("/register") || path.contains("/login")) {
